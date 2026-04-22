@@ -1,5 +1,6 @@
 package com.rxincredible.config;
 
+import org.springframework.http.HttpMethod;
 import com.rxincredible.service.CustomUserDetailsService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -111,6 +112,7 @@ public class SecurityConfig {
                 .authenticationProvider(authenticationProvider())
                 .authorizeHttpRequests(auth -> {
                     // Public endpoints - authentication not required
+                    auth.requestMatchers(HttpMethod.OPTIONS, "/**").permitAll();
                     auth.requestMatchers("/api/auth/**").permitAll();
                     auth.requestMatchers("/api/services/**").permitAll();
                     auth.requestMatchers("/api/users/register").permitAll();
