@@ -1,0 +1,14 @@
+package com.rxincredible;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.scheduling.annotation.EnableScheduling;
+
+@SpringBootApplication
+@EnableScheduling
+public class RXIncredibleApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(RXIncredibleApplication.class, args);
+    }
+}

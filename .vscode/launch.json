@@ -1,0 +1,33 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "RXIncredibleApplication (Razorpay Test)",
+      "request": "launch",
+      "mainClass": "com.rxincredible.RXIncredibleApplication",
+      "projectName": "rxincredible-backend",
+      "env": {
+        "RAZORPAY_KEY": "rzp_test_SauKQkTv39clpn",
+        "RAZORPAY_SECRET": "uqCqN56Z9I2OG3j12htb1Xzy",
+        "RAZORPAY_WEBHOOK_SECRET": "your_webhook_secret",
+        "RAZORPAY_TEST_MODE": "true",
+        "RAZORPAY_MOCK_MODE": "false"
+      }
+    },
+    {
+      "type": "java",
+      "name": "RXIncredibleApplication (Mock Payment)",
+      "request": "launch",
+      "mainClass": "com.rxincredible.RXIncredibleApplication",
+      "projectName": "rxincredible-backend",
+      "env": {
+        "RAZORPAY_KEY": "",
+        "RAZORPAY_SECRET": "",
+        "RAZORPAY_WEBHOOK_SECRET": "your_webhook_secret",
+        "RAZORPAY_TEST_MODE": "true",
+        "RAZORPAY_MOCK_MODE": "true"
+      }
+    }
+  ]
+}

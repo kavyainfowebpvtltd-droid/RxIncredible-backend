@@ -1,0 +1,26 @@
+2026-04-21T18:18:01.209+05:30  INFO 12732 --- [restartedMain] c.rxincredible.RXIncredibleApplication   : Starting RXIncredibleApplication using Java 21.0.8 with PID 12732 (D:\RxIncredible\rxincredible-backend\target\classes started by Administrator in D:\RxIncredible\rxincredible-backend)
+2026-04-21T18:18:01.213+05:30  INFO 12732 --- [restartedMain] c.rxincredible.RXIncredibleApplication   : No active profile set, falling back to 1 default profile: "default"
+2026-04-21T18:18:04.942+05:30  INFO 12732 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-21T18:18:04.944+05:30  INFO 12732 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2026-04-21T18:18:05.102+05:30  INFO 12732 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-04-21T18:18:06.269+05:30  INFO 12732 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-04-21T18:18:06.627+05:30  INFO 12732 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@16791f52
+2026-04-21T18:18:06.630+05:30  INFO 12732 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-04-21T18:18:14.749+05:30  WARN 12732 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-21T18:18:17.112+05:30  INFO 12732 --- [restartedMain] c.rxincredible.RXIncredibleApplication   : Started RXIncredibleApplication in 16.886 seconds (process running for 19.014)
+2026-04-21T18:18:17.117+05:30  INFO 12732 --- [restartedMain] c.rxincredible.config.DataInitializer    : Starting default user initialization
+2026-04-21T18:18:17.137+05:30  INFO 12732 --- [MessageBroker-1] c.r.config.OrderExpirationScheduler      : Checking for expired online pharmacy orders...
+2026-04-21T18:18:17.461+05:30  INFO 12732 --- [MessageBroker-1] c.r.config.OrderExpirationScheduler      : No expired online pharmacy orders found
+2026-04-21T18:18:18.042+05:30  INFO 12732 --- [restartedMain] c.rxincredible.config.DataInitializer    : Default Admin User Created
+2026-04-21T18:18:18.086+05:30  INFO 12732 --- [restartedMain] c.rxincredible.config.DataInitializer    : Default Users Initialization Complete
+2026-04-21T18:20:12.664+05:30  INFO 12732 --- [http-nio-0.0.0.0-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-21T18:20:13.113+05:30  WARN 12732 --- [http-nio-0.0.0.0-8080-exec-1] o.s.w.s.h.HandlerMappingIntrospector     : Cache miss for REQUEST dispatch to '/api/auth/login' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
+2026-04-21T18:20:13.233+05:30  INFO 12732 --- [http-nio-0.0.0.0-8080-exec-1] c.r.controller.AuthController            : Login attempt for email: do***@rxincredible.com
+2026-04-21T18:20:13.554+05:30  INFO 12732 --- [http-nio-0.0.0.0-8080-exec-1] c.r.controller.AuthController            : Login successful for email: do***@rxincredible.com
+2026-04-21T18:20:25.338+05:30  INFO 12732 --- [http-nio-0.0.0.0-8080-exec-10] c.r.controller.AuthController            : Login attempt for email: ak***@gmail.com
+2026-04-21T18:20:25.507+05:30  WARN 12732 --- [http-nio-0.0.0.0-8080-exec-10] c.r.controller.AuthController            : Login failed for email: ak***@gmail.com - Bad credentials
+2026-04-21T18:20:33.465+05:30  INFO 12732 --- [http-nio-0.0.0.0-8080-exec-6] c.r.controller.AuthController            : Login attempt for email: ak***@gmail.com
+2026-04-21T18:20:33.611+05:30  INFO 12732 --- [http-nio-0.0.0.0-8080-exec-6] c.r.controller.AuthController            : Login successful for email: ak***@gmail.com
+2026-04-21T18:20:39.150+05:30  INFO 12732 --- [http-nio-0.0.0.0-8080-exec-2] c.r.controller.AuthController            : User logged out successfully
+2026-04-21T18:35:05.078+05:30  INFO 12732 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-04-21T18:35:05.137+05:30  INFO 12732 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
