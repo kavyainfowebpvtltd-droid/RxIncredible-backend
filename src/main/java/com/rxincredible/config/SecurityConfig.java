@@ -32,7 +32,7 @@ import jakarta.servlet.http.HttpServletResponse;
 @EnableWebSecurity
 public class SecurityConfig {
 
-    @Value("${cors.allowed-origins:http://localhost:5173,http://localhost:5174,http://localhost:5175,http://localhost:5176,http://localhost:5180,http://localhost:5181,http://localhost:3000,http://127.0.0.1:5173,http://127.0.0.1:5174,http://127.0.0.1:5175,http://127.0.0.1:5176,http://127.0.0.1:5180,http://127.0.0.1:5181,http://127.0.0.1:3000}")
+   @Value("${cors.allowed-origins:http://97.74.87.179:3000}")
     private String allowedOrigins;
 
     private final CustomUserDetailsService customUserDetailsService;
