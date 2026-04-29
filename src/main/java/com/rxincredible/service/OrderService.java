@@ -1682,6 +1682,9 @@ public class OrderService {
             prescription.setHistoryPoints(request.getHistoryPoints());
             prescription.setExamFindings(request.getExamFindings());
             prescription.setSuggestedInvestigations(request.getSuggestedInvestigations());
+            prescription.setConsultationDate(request.getConsultationDate());
+            prescription.setHeight(request.getHeight() != null ? request.getHeight() : "");
+            prescription.setWeight(request.getWeight() != null ? request.getWeight() : "");
             
             // Create a temporary order with prescription for email
             Order orderWithPrescription = new Order();

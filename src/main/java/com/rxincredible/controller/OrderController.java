@@ -1003,6 +1003,8 @@ public class OrderController {
         private String gender;
         private String address;
         private String consultationDate;
+        private String height;
+        private String weight;
         private String chiefComplaints;
         private String diagnosis;
         private String historyPoints;
@@ -1031,6 +1033,10 @@ public class OrderController {
         public void setAddress(String address) { this.address = address; }
         public String getConsultationDate() { return consultationDate; }
         public void setConsultationDate(String consultationDate) { this.consultationDate = consultationDate; }
+        public String getHeight() { return height; }
+        public void setHeight(String height) { this.height = height; }
+        public String getWeight() { return weight; }
+        public void setWeight(String weight) { this.weight = weight; }
         public String getChiefComplaints() { return chiefComplaints; }
         public void setChiefComplaints(String chiefComplaints) { this.chiefComplaints = chiefComplaints; }
         public String getDiagnosis() { return diagnosis; }

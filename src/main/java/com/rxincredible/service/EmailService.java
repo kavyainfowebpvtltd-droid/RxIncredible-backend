@@ -48,7 +48,7 @@ public class EmailService {
 
         try {
             SimpleMailMessage message = new SimpleMailMessage();
-            message.setFrom("RxIncredible <mramteke80@gmail.com>");
+            message.setFrom("RxIncredible <info@rxincredible.com>");
             message.setTo(toEmail);
             message.setSubject("Email Verification - RxIncredible");
             message.setText(buildOtpEmailBody(fullName, otp));
@@ -78,7 +78,7 @@ public class EmailService {
             // Use HTML email for better UI
             MimeMessage message = mailSender.createMimeMessage();
             MimeMessageHelper helper = new MimeMessageHelper(message, true);
-            helper.setFrom("RxIncredible <mramteke80@gmail.com>");
+            helper.setFrom("RxIncredible <info@rxincredible.com>");
             helper.setTo(toEmail);
             helper.setSubject("Verify Your Email - RxIncredible Registration");
             helper.setText(buildVerificationEmailBody(fullName, verifyUrl), true);
@@ -197,7 +197,7 @@ public class EmailService {
 
         try {
             SimpleMailMessage message = new SimpleMailMessage();
-            message.setFrom("RxIncredible <mramteke80@gmail.com>");
+            message.setFrom("RxIncredible <info@rxincredible.com>");
             message.setTo(toEmail);
             message.setSubject(subject);
             message.setText(body);
@@ -241,7 +241,7 @@ public class EmailService {
 
         try {
             SimpleMailMessage message = new SimpleMailMessage();
-            message.setFrom("RxIncredible <mramteke80@gmail.com>");
+            message.setFrom("RxIncredible <info@rxincredible.com>");
             message.setTo(toEmail);
             message.setSubject(subject);
             message.setText(body);
@@ -335,7 +335,7 @@ public class EmailService {
         try {
             MimeMessage message = mailSender.createMimeMessage();
             MimeMessageHelper helper = new MimeMessageHelper(message, true);
-            helper.setFrom("RxIncredible <mramteke80@gmail.com>");
+            helper.setFrom("RxIncredible <info@rxincredible.com>");
             helper.setTo(toEmail);
             helper.setSubject(subject);
             helper.setText(body);
@@ -384,7 +384,7 @@ public class EmailService {
             // Try sending without attachment
             try {
                 SimpleMailMessage simpleMessage = new SimpleMailMessage();
-                simpleMessage.setFrom("RxIncredible <mramteke80@gmail.com>");
+                simpleMessage.setFrom("RxIncredible <info@rxincredible.com>");
                 simpleMessage.setTo(toEmail);
                 simpleMessage.setSubject(subject);
                 simpleMessage.setText(body);
@@ -426,7 +426,7 @@ public class EmailService {
         try {
             MimeMessage message = mailSender.createMimeMessage();
             MimeMessageHelper helper = new MimeMessageHelper(message, true);
-            helper.setFrom("RxIncredible <mramteke80@gmail.com>");
+            helper.setFrom("RxIncredible <info@rxincredible.com>");
             helper.setTo(toEmail);
             helper.setSubject(subject);
             helper.setText(body);
@@ -484,7 +484,7 @@ public class EmailService {
         try {
             MimeMessage message = mailSender.createMimeMessage();
             MimeMessageHelper helper = new MimeMessageHelper(message, true);
-            helper.setFrom("RxIncredible <mramteke80@gmail.com>");
+            helper.setFrom("RxIncredible <info@rxincredible.com>");
             helper.setTo(toEmail);
             helper.setSubject(subject);
             helper.setText(body, true);
@@ -560,7 +560,8 @@ public class EmailService {
                 : "Customer";
         String country = order.getDeliveryCountry() != null && !order.getDeliveryCountry().isBlank()
                 ? order.getDeliveryCountry()
-                : user != null && user.getCountry() != null && !user.getCountry().isBlank() ? user.getCountry() : "India";
+                : user != null && user.getCountry() != null && !user.getCountry().isBlank() ? user.getCountry()
+                        : "India";
         String displayAmount = CurrencyUtil.formatAmount(order.getTotalAmount(), country);
 
         StringBuilder body = new StringBuilder();
@@ -653,7 +654,7 @@ public class EmailService {
         try {
             MimeMessage message = mailSender.createMimeMessage();
             MimeMessageHelper helper = new MimeMessageHelper(message, true);
-            helper.setFrom("RxIncredible <mramteke80@gmail.com>");
+            helper.setFrom("RxIncredible <info@rxincredible.com>");
             helper.setTo(toEmail);
             helper.setSubject(subject);
             helper.setText(body, true); // Enable HTML
@@ -701,7 +702,7 @@ public class EmailService {
             try {
                 MimeMessage message = mailSender.createMimeMessage();
                 MimeMessageHelper helper = new MimeMessageHelper(message, true);
-                helper.setFrom("RxIncredible <mramteke80@gmail.com>");
+                helper.setFrom("RxIncredible <info@rxincredible.com>");
                 helper.setTo(toEmail);
                 helper.setSubject(subject);
                 helper.setText(body, true);
@@ -837,7 +838,7 @@ public class EmailService {
         try {
             MimeMessage message = mailSender.createMimeMessage();
             MimeMessageHelper helper = new MimeMessageHelper(message, true);
-            helper.setFrom("RxIncredible <mramteke80@gmail.com>");
+            helper.setFrom("RxIncredible <info@rxincredible.com>");
             helper.setTo(toEmail);
             helper.setSubject(subject);
             helper.setText(body, true);
@@ -933,7 +934,7 @@ public class EmailService {
 
         try {
             SimpleMailMessage message = new SimpleMailMessage();
-            message.setFrom("RxIncredible <mramteke80@gmail.com>");
+            message.setFrom("RxIncredible <info@rxincredible.com>");
             message.setTo(toEmail);
             message.setSubject(subject);
             message.setText(body);
@@ -1007,7 +1008,7 @@ public class EmailService {
 
         try {
             SimpleMailMessage message = new SimpleMailMessage();
-            message.setFrom("RxIncredible <mramteke80@gmail.com>");
+            message.setFrom("RxIncredible <info@rxincredible.com>");
             message.setTo(toEmail);
             message.setSubject(subject);
             message.setText(body);

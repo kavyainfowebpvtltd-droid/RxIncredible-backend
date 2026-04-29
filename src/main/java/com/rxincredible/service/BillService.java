@@ -153,6 +153,12 @@ public class BillService {
         return fileName;
     }
 
+
+
+
+
+    
+
     // Generate payment receipt PDF
     public String generatePaymentReceiptPdf(Long orderId) throws IOException {
         Order order = orderRepository.findByIdWithUser(orderId)
@@ -219,7 +225,8 @@ public class BillService {
 
         // Header with Logo
         try {
-            File logoFile = new File("backend\\src\\main\\java\\com\\rxincredible\\service\\asset\\logo1.png");
+            File logoFile = new File("C:\\Paymentlogo\\logo1.png");
+
             if (logoFile.exists()) {
                 PDImageXObject logo = PDImageXObject.createFromFile(logoFile.getAbsolutePath(), document);
                 contentStream.drawImage(logo, margin, yPos - 42, 80, 80);
@@ -372,7 +379,7 @@ public class BillService {
         float logoX = 50; // margin
 
         try {
-            File footerLogoFile = new File("backend\\src\\main\\java\\com\\rxincredible\\service\\asset\\logo2.png");
+            File footerLogoFile = new File("C:\\Paymentlogo\\logo2.png");
             if (footerLogoFile.exists()) {
                 PDImageXObject footerLogo = PDImageXObject.createFromFile(footerLogoFile.getAbsolutePath(), document);
                 contentStream.drawImage(footerLogo, logoX, footerY, logoWidth, logoHeight);
