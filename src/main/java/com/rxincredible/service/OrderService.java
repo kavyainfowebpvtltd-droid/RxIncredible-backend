@@ -726,9 +726,8 @@ public class OrderService {
     public List<Order> findByAssignedDoctorId(Long doctorId) {
         System.out.println("=== FIND ORDERS BY DOCTOR START ===");
         System.out.println("Doctor ID: " + doctorId);
-        // Filter by SECOND_OPINION service type - doctors should only see second opinion orders
-        List<Order> orders = orderRepository.findByAssignedDoctorIdAndServiceType(doctorId, "SECOND_OPINION");
-        System.out.println("Found " + orders.size() + " SECOND_OPINION orders for doctor " + doctorId);
+        List<Order> orders = orderRepository.findByAssignedDoctorId(doctorId);
+        System.out.println("Found " + orders.size() + " assigned orders for doctor " + doctorId);
         
         for (Order o : orders) {
             System.out.println("Order: " + o.getOrderNumber() + 
@@ -779,8 +778,7 @@ public class OrderService {
     }
     
     public List<Order> findByAssignedDoctorIdWithDetails(Long doctorId) {
-        // Filter by SECOND_OPINION service type - doctors should only see second opinion orders
-        return orderRepository.findByAssignedDoctorIdAndServiceType(doctorId, "SECOND_OPINION");
+        return orderRepository.findByAssignedDoctorId(doctorId);
     }
     
     // Find orders by payment status (for admin to see paid orders only)
