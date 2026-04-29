@@ -1,5 +1,6 @@
 package com.rxincredible.config;
 
+import org.springframework.http.HttpMethod;
 import com.rxincredible.service.CustomUserDetailsService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -32,7 +33,7 @@ import jakarta.servlet.http.HttpServletResponse;
 @EnableWebSecurity
 public class SecurityConfig {
 
-    @Value("${cors.allowed-origins:http://localhost:5173,http://localhost:5174,http://localhost:5175,http://localhost:5176,http://localhost:5180,http://localhost:5181,http://localhost:3000,http://127.0.0.1:5173,http://127.0.0.1:5174,http://127.0.0.1:5175,http://127.0.0.1:5176,http://127.0.0.1:5180,http://127.0.0.1:5181,http://127.0.0.1:3000}")
+   @Value("${cors.allowed-origins:http://97.74.87.179:3000}")
     private String allowedOrigins;
 
     private final CustomUserDetailsService customUserDetailsService;
@@ -64,22 +65,17 @@ public class SecurityConfig {
 
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
-        CorsConfiguration configuration = new CorsConfiguration();
-        List<String> origins = Arrays.stream(allowedOrigins.split(","))
-                .map(String::trim)
-                .filter(origin -> !origin.isBlank())
-                .toList();
-        configuration.setAllowedOrigins(origins);
-        configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"));
-        configuration.setAllowedHeaders(Arrays.asList("Authorization", "Content-Type", "X-Requested-With"));
-        configuration.setExposedHeaders(Arrays.asList("Authorization", "Content-Type"));
-        configuration.setAllowCredentials(true);
-        configuration.setMaxAge(3600L);
+       CorsConfiguration configuration = new CorsConfiguration();
 
-        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        source.registerCorsConfiguration("/**", configuration);
-        return source;
-    }
+       configuration.setAllowedOriginPatterns(List.of("*")); // 🔥 IMPORTANT
+       configuration.setAllowedMethods(List.of("GET","POST","PUT","DELETE","OPTIONS"));
+       configuration.setAllowedHeaders(List.of("*"));
+       configuration.setAllowCredentials(true);
+
+       UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+       source.registerCorsConfiguration("/**", configuration);
+    return source;
+}
 
     // Custom authentication entry point to return proper JSON error responses
     @Bean
@@ -111,6 +107,7 @@ public class SecurityConfig {
                 .authenticationProvider(authenticationProvider())
                 .authorizeHttpRequests(auth -> {
                     // Public endpoints - authentication not required
+                    auth.requestMatchers(HttpMethod.OPTIONS, "/**").permitAll();
                     auth.requestMatchers("/api/auth/**").permitAll();
                     auth.requestMatchers("/api/services/**").permitAll();
                     auth.requestMatchers("/api/users/register").permitAll();
